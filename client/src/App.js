@@ -24,7 +24,7 @@ function App() {
 
   // @desc get all tasks
   React.useEffect(() => {
-    fetch("http://localhost:3001/api/v1/tasks")
+    fetch("/api/v1/tasks")
       .then((res) => res.json())
       .then((data) => {
         setTasks(data);
@@ -33,7 +33,7 @@ function App() {
 
   // @desc delete a task
   async function deleteTask(id) {
-    await fetch(`http://localhost:3001/api/v1/tasks/${id}`, {
+    await fetch(`/api/v1/tasks/${id}`, {
       method: "DELETE",
     });
     const newTasks = tasks.filter((el) => el._id !== id);
@@ -42,7 +42,7 @@ function App() {
 
   // @desc get a task
   async function getTask(id) {
-    const response = await fetch(`http://localhost:3001/api/v1/tasks/${id}`, {
+    const response = await fetch(`/api/v1/tasks/${id}`, {
       method: "GET",
     });
     const task = await response.json();
@@ -52,7 +52,7 @@ function App() {
   // @desc update a task
   async function updateTask(id, newName) {
     console.log(newName);
-    const response = await fetch(`http://localhost:3001/api/v1/tasks/${id}`, {
+    const response = await fetch(`/api/v1/tasks/${id}`, {
       method: "PATCH",
       body: JSON.stringify({ name: newName }),
       headers: {
@@ -83,7 +83,7 @@ function App() {
   }
 
   async function refreshTasks() {
-    const response = await fetch(`http://localhost:3001/api/v1/tasks/`, {
+    const response = await fetch(`/api/v1/tasks/`, {
       method: "GET",
     });
     const tasks = await response.json();

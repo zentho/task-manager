@@ -11,7 +11,7 @@ export default function TaskForm(props) {
 
   // @desc post a task
   async function postTask(newTask) {
-    const response = await fetch(`http://localhost:3001/api/v1/tasks/`, {
+    const response = await fetch(`/api/v1/tasks/`, {
       method: "POST",
       body: JSON.stringify(newTask),
       headers: {
