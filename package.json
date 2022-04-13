@@ -20,7 +20,6 @@
   "bugs": {
     "url": "https://github.com/zentho/task-manager/issues"
   },
-  "homepage": "https://github.com/zentho/task-manager#readme",
   "dependencies": {
     "colors": "^1.4.0",
     "cors": "^2.8.5",
